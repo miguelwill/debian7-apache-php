@@ -20,21 +20,25 @@ RUN apt-get update && \
     net-tools vim rsyslog ca-certificates \
     apache2 php5 php5-mysql php5-gd php5-imagick libapache2-mod-php5 php5-mcrypt mysql-client php5-memcache memcached php5-memcached php5-xcache php5-imap php-net-imap php-net-socket php-pear php5-mcrypt \
     rsync && \
-    apt-get clean 
-
-RUN apt-get update && \
-    apt-get install -y --force-yes \
-    libapache2-modsecurity modsecurity-crs && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+#modsecurity
+#RUN apt-get update && \
+#    apt-get install -y --force-yes \
+#    libapache2-modsecurity modsecurity-crs && \
+#    apt-get clean && \
+#    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#RUN mv -v /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
+#RUN cp -vp /usr/share/modsecurity-crs/base_rules/* /etc/modsecurity/
+#RUN a2enmod mod-security
 
 RUN a2enmod ssl
 RUN a2ensite default-ssl
 RUN a2enmod rewrite
-RUN a2enmod mod-security
 
-RUN mv -v /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
-RUN cp -vp /usr/share/modsecurity-crs/base_rules/* /etc/modsecurity/
+
+
 
 ENV TZ="America/Santiago" \
     SERVER_NAME="localhost" \
