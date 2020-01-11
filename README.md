@@ -17,9 +17,9 @@ you have mysql-client to import a mysql database backup into the "db" server fro
 these parameters are also defined in docker-compose.yml file
 
 # Add Stack with config
-  * download files from https://github.com/miguelwill/debian7-apache-modsec
+  * download files from https://github.com/miguelwill/debian7-apache-php
   * edit docker-compose.yml file editing db autentication parameters
-  * run for deploy stack : docker stack deploy -c docker-compose.yml debian6-apache2
+  * run for deploy stack : docker stack deploy -c docker-compose.yml debian7-apache2
   * waith for db initialization
 
 
