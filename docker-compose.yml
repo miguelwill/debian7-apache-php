@@ -4,7 +4,7 @@ version: '3.6'
 services:
 
   apache2-modsec:
-    image: miguelwill/debian7-apache-modsec
+    image: miguelwill/debian7-apache-php
     depends_on:
       - db
     volumes:
@@ -12,6 +12,7 @@ services:
     restart: always
     environment:
       TZ: America/Santiago
+      #RELAY_HOST: 172.43.12.15
     ports:
       - 80:80
       - 443:443
