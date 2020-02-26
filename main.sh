@@ -17,6 +17,12 @@ sed -i '/output_buffering = 4096/c output_buffering = Off' /etc/php5/apache2/php
 #sed -i '/SecPcreMatchLimitRecursion 1000/c SecPcreMatchLimitRecursion 10000' /etc/modsecurity/modsecurity.conf
 #sed -i '/SecResponseBodyLimit 524288/c SecResponseBodyLimit 5242880' /etc/modsecurity/modsecurity.conf
 
+if [ -n "$RELAY_HOST" ]
+then
+        postconf -e relayhost=$RELAY_HOST
+fi
+
+
 /etc/init.d/memcached start
 
 rm -f /var/run/apache2.pid && exec apache2 -DFOREGROUND
