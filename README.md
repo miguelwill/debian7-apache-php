@@ -1,7 +1,7 @@
 # Apache2 with Mod-security on Debian7
 Apache2 over Debian 7 with PHP 5.4.45 and Mod-security
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/miguelwill/debian7-apache-modsec.svg?style=plastic)](https://hub.docker.com/r/miguelwill/debian7-apache-modsec/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/miguelwill/debian7-apache-php.svg?style=plastic)](https://hub.docker.com/r/miguelwill/debian7-apache-php/)
 
 # Description
 debian7 image with apache2, PHP 5.4.45 and Mod-security
